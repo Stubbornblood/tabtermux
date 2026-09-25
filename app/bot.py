@@ -7,6 +7,7 @@ from telegram.ext import Application
 from app.config import settings
 from app.handlers.camera import register_handlers as register_camera_handlers
 from app.handlers.audio import register_handlers as register_audio_handlers
+from app.handlers.system import register_handlers as register_system_handlers
 
 logger = logging.getLogger(__name__)
 
@@ -24,6 +25,8 @@ def create_application() -> Application:
 
     register_camera_handlers(application)
     register_audio_handlers(application)
+    register_system_handlers(application)
+    
 
     logger.info("Camera handlers registered")
 
